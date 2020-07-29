@@ -5,9 +5,9 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ master,praneetcsa-githubflow  ]
+    branches: [ master]
   pull_request:
-    branches: [ master,praneetcsa-githubflow ]
+    branches: [ master]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
         run: | 
           npm install
           npm run build
-      - uses: actions/upload-artifact@praneetcsa-githubflow
+      - uses: actions/upload-artifact@master
         with:
           name: webpack artifacts
           path: public/
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@praneetcsa-githubflow 
+      - uses: actions/download-artifact@master
         with: 
           name: webpack artifacts
           path: public/
