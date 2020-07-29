@@ -18,7 +18,7 @@ jobs:
         run: | 
           npm install
           npm run build
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@praneetcsa-githubflow
         with:
           name: webpack artifacts
           path: public/
@@ -33,7 +33,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/download-artifact@master
+      - uses: actions/download-artifact@praneetcsa-githubflow 
         with: 
           name: webpack artifacts
           path: public/
